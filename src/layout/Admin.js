@@ -1,24 +1,31 @@
-import React from 'react'
-import Drawer from "@material-ui/core/Drawer"
+import React from "react"
+import SideBar from "../components/SideBar/SideBar.js"
+import NavBar from "../components/NavBar/NavBar.js"
+import { makeStyles } from "@material-ui/core/styles"
+
+// routes for dashboard page...
+import routes from "../routes/dashboardRoutes.js"
+
+//Styles ..,
 import styles from "../assets/jss/adminStyle.js"
 
+const useStyles = makeStyles(styles)
 
 export default function Admin() {
-    return (
-        <div>
-            <Drawer style = {styles.wrapper}
-                anchor="left"
-                open={true}
-            >
-                <div> 
-                    Anchor Drawer
-                    <ul>
-                        <li> test_link_0</li>
-                        <li> test_link_2</li>
-                        <li> test_link_367576767676767676766ffffffffffffffffffffffff</li>
-                    </ul>
-                </div>
-            </Drawer>
-        </div>
-    )
+	const classes = useStyles();
+	console.log("class:", classes);
+  return (
+    <div className = {classes.wrapper}>
+			<div className = {classes.sideBar}>
+				<SideBar
+					routes = {routes}
+					open = {true}
+					anchor="left"
+				/>
+			</div>
+			<div className = {classes.mainPanel}>
+				<NavBar/>		
+			</div>
+    </div>
+  )
 }

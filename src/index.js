@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 // content added by RH
 import Admin from './layout/Admin';
 import Normal from './layout/Normal';
+import Test from './layout/Test';
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -18,7 +19,8 @@ ReactDOM.render(
     <Switch>
         <Route path = "/admin" component = {Admin} />
         <Route path = '/normal' component = {Normal} />
-        <Route path = '/test' render = {()=>( <div> This is test ...</div>)} />
+        {/* <Route path = '/test' render = {()=>( <div> This is test ...</div>)} /> */}
+        <Route path = '/test' component = {Test} />
         <Redirect from = "/" to = "/admin" />
       </Switch>
   </Router>,

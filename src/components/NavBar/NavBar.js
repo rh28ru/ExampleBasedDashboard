@@ -10,15 +10,15 @@ import MenuIcon from '@material-ui/icons/Menu';
 // style...
 import styles from "../../assets/jss/components/headerStyle.js"
 
-const useStyles = makeStyles(styles)
+const useStyles = makeStyles(styles);
 
 export default function NavBar(props) {
-  const classes = useStyles();
+	const classes = useStyles();
+	console.log(classes.title, "header")
 
   return (
-    // <div className={classes.root}>
-    <div >
-      <AppBar>
+    <div className = {classes.root}>
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />

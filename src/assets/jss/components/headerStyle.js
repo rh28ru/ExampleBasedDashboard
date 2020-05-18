@@ -1,15 +1,24 @@
 
+import {
+	drawerWidth
+} from "../globalStyle.js"
 
-const headerStyle = {
-  root: {
-		flexGrow: 1,
+
+const headerStyle = ()=>({
+	appBar: {
+		width: `calc(100% - ${drawerWidth}px)`,
+		marginLeft: drawerWidth
+	},
+	root: {
+    display: 'flex',
   },
   menuButton: {
-    marginRight: "30px", // theme.spacing(8)
+    marginLeft: "5px", // theme.spacing(8)
   },
   title: {
-		flexGrow: 3,
+		flexGrow: 1,
+		color: "red"
   }
-}
+})
 
 export default headerStyle;

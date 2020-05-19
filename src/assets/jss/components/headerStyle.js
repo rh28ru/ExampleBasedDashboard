@@ -5,6 +5,7 @@ import {
 
 const headerStyle = (theme)=>({
   appBar: {
+    width: "100%",
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 // components
@@ -12,6 +12,8 @@ import styles from "../assets/jss/adminStyle"
 // routes for Links on SideBar and NavBar...
 import links from "../routes/dashboardRoutes"
 import {Switch, Route, Redirect } from "react-router-dom"
+import bgImage from "../assets/img/sidebar-1.jpg"
+import logo from "../assets/img/company_0.png";
 
 const useStyles = makeStyles(styles)
 
@@ -29,7 +31,7 @@ const switchRoutes = (
       }
       return null;
     })}
-    {/* <Redirect from="/admin" to="/admin/dashboard" /> */}
+    <Redirect from="/admin" to="/admin/dashboard" />
   </Switch>
 );
 
@@ -38,14 +40,19 @@ function ResponsiveDrawer(props) {
   const { window } = props;
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [image, setImage] = React.useState(bgImage);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
-    console.log('[mobileOpen]:', mobileOpen)
+    // console.log('[mobileOpen]:', mobileOpen)
   };
+
+  const handelDrawerImage = ()=> {
+    setImage(bgImage);
+  }
   
   const container = window !== undefined ? () => window().document.body : undefined;
-
+  const logoText = "Green Freinds"
   return (
     <div className={classes.root}>
       <CssBaseline /> { /* check this */}
@@ -56,6 +63,9 @@ function ResponsiveDrawer(props) {
         links = {links}
         container = {container}
         open={mobileOpen}
+        image={image}
+        logo={logo}
+        logoText={logoText}
         handleDrawerToggle = {handleDrawerToggle}
       />
 

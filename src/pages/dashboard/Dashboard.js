@@ -1,14 +1,18 @@
-import React from "./node_modules/react"
+import React from "react"
+
+function createArray(){
+  const Array = [];
+  for (let index = 0; index < 100; index++) {
+    Array.push(index);
+  }};
 
 export default function Dashboard() {
   return (
     <div>
-      <h1 style = {{backgroundColor: "red"}}> Dashboard Page.....Dashboard Page.....</h1>
-      <h1 style = {{backgroundColor: "red"}}> Dashboard Page.....Dashboard Page.....</h1>
-      <h1 style = {{backgroundColor: "red"}}> Dashboard Page.....Dashboard Page.....</h1>
-      <h1 style = {{backgroundColor: "red"}}> Dashboard Page.....Dashboard Page.....</h1>
-      <h1 style = {{backgroundColor: "red"}}> Dashboard Page.....Dashboard Page.....</h1>
-
+      <h1 >  Dashboard Page.....</h1>
+      { createArray.map(i=>( <div key={i}>{i}</div>)) }
+        
+      
     </div>
   )
 }

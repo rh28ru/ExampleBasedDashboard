@@ -26,14 +26,14 @@ const dashboardRoutes = [
         path: "/dashboard",
         name: "Dashboard",
         icon: Dashboard,
-        component: "DashboardPage",
+        component: DashboardPage,
         layout: "/admin"
     },
     {
         path: "/user",
         name: "User Profile",
         icon: Person,
-        component: "UserProfile",
+        component: UserProfile,
         layout: "/admin"
 
     },
@@ -41,7 +41,7 @@ const dashboardRoutes = [
         path: "/table",
         name: "TableList",
         icon: LibraryBooks,
-        component: "TableList",
+        component: TableList,
         layout: "/admin"
     }
 ]

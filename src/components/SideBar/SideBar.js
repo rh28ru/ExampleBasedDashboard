@@ -5,11 +5,11 @@ import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Icon from "@material-ui/core/Icon"
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import MailIcon from '@material-ui/icons/Mail';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
@@ -21,41 +21,64 @@ const useStyles = makeStyles(styles)
 
 export default function SideBar(props) {
 	const classes = useStyles();
-	const theme = useTheme();
-	const {links, color, open } = props
+	// const theme = useTheme();
+	const { links, image, open, container, logo, logoText } = props
 	
+  const brand = (
+    <div className={classes.logo}>
+      {/* <a
+        href="https://www.creative-tim.com?ref=mdr-sidebar"
+        // className={classNames(classes.logoLink, {
+        //   [classes.logoLinkRTL]: props.rtlActive
+        // })}
+        target="_blank"
+      > */}
+        <div className={classes.logoImage}>
+          <img src={logo} alt="logo" className={classes.img} />
+					<div className={classes.logoText}>{logoText}</div>
+        	
+        </div>
+      {/* </a> */}
+    </div>
+	);
+		
 	const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
-				{links.map((link, index)=> (
-					<NavLink 
+      <List className={classes.list}>
+				{links.map((link, key)=> (
+					<NavLink
+						className={classes.item}
 						to={link.layout + link.path}
-						key={link.name}
+						key={key}
 						>
-						<ListItem button >
+						<ListItem button className={classes.itemLink}>
 							{typeof link.icon	=== "string" ? (
-								<Icon> {link.icon}</Icon> ):(
-								<link.icon></link.icon>		
+								<Icon className={classes.itemIcon}> {link.icon}</Icon> ):(
+								<link.icon className={classes.itemIcon}></link.icon>		
 								)
 							}
 							{/* <ListItemIcon>{link.icon}</ListItemIcon> */}
-							<ListItemText primary={link.name}></ListItemText>
+							<ListItemText 
+								primary={link.name}
+								className={classes.itemText}
+								disableTypography={true}
+							/>
 						</ListItem>
 					</NavLink>
 					))
 				}
       </List>
       <Divider />
-      <List>
+      {/* <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
-      </List>
+      </List> */}
     </div>
   );	
 	return (
@@ -63,10 +86,11 @@ export default function SideBar(props) {
 		{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
 		<Hidden smUp implementation="css">
 			<Drawer
-				container={props.container}
+				container={container}
 				variant="temporary"
-				anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-				open={props.open}
+				// anchor={theme.direction === 'rtl' ? 'left' : 'right'}
+				anchor="right"
+				open={open}
 				onClose={props.handleDrawerToggle}
 				classes={{
 					paper: classes.drawerPaper,
@@ -75,7 +99,17 @@ export default function SideBar(props) {
 					keepMounted: true, // Better open performance on mobile.
 				}}
 			>
-				{drawer}
+				<div className={classes.sidebarWrapper}>
+					{brand}
+					{drawer}
+				</div>
+				
+				{image !== undefined ? (
+					<div
+						className={classes.background}
+						style={{ backgroundImage: "url(" + image + ")" }}
+					/>
+				) : null}
 			</Drawer>
 		</Hidden>
 		<Hidden xsDown implementation="css">
@@ -86,7 +120,17 @@ export default function SideBar(props) {
 				variant="permanent"
 				open
 			>
-				{drawer}
+				<div className={classes.sidebarWrapper}>
+					{brand}
+					{drawer}
+				</div>
+				
+				{image !== undefined ? (
+					<div
+						className={classes.background}
+						style={{ backgroundImage: "url(" + image + ")" }}
+					/>
+				) : null}
 			</Drawer>
 		</Hidden>
 	</nav>

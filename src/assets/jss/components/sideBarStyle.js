@@ -16,7 +16,7 @@ const sideBarStyle = ((theme) => ({
     },
   },
   // necessary for content to be below app bar
-  toolbar: theme.mixins.toolbar,
+  toolbar: theme.mixins.toolbar,  
   drawerPaper: {
     width: drawerWidth,
   },

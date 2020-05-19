@@ -3,22 +3,19 @@ import {
 	drawerWidth
 } from "../globalStyle.js"
 
-
-const headerStyle = ()=>({
-	appBar: {
-		width: `calc(100% - ${drawerWidth}px)`,
-		marginLeft: drawerWidth
-	},
-	root: {
-    display: 'flex',
+const headerStyle = (theme)=>({
+  appBar: {
+    [theme.breakpoints.up('sm')]: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+    },
   },
   menuButton: {
-    marginLeft: "5px", // theme.spacing(8)
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
   },
-  title: {
-		flexGrow: 1,
-		color: "red"
-  }
 })
 
 export default headerStyle;

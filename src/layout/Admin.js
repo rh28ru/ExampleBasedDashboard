@@ -5,15 +5,15 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 
 // components
-import SideBar from "../components/SideBar/SideBar"
-import NavBar from "../components/NavBar/NavBar"
+import SideBar from "components/SideBar/SideBar"
+import NavBar from "components/NavBar/NavBar"
 // styles ... 
-import styles from "../assets/jss/adminStyle"
+import styles from "assets/jss/adminStyle"
 // routes for Links on SideBar and NavBar...
-import links from "../routes/dashboardRoutes"
+import links from "routes/dashboardRoutes"
 import {Switch, Route, Redirect } from "react-router-dom"
-import bgImage from "../assets/img/sidebar-1.jpg"
-import logo from "../assets/img/company_0.png";
+import bgImage from "assets/img/sidebar-1.jpg"
+import logo from "assets/img/company_0.png";
 
 const useStyles = makeStyles(styles)
 

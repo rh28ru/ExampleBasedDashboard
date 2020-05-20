@@ -11,10 +11,10 @@ import LibraryBooks from "@material-ui/icons/LibraryBooks";
 
 // core components/views for Admin layout
 
-import DashboardPage from "../pages/Dashboard/Dashboard.js"
-import UserProfile from "../pages/UserProfile/UserProfile.js"
-import TableList from "../pages/TableList/TableList";
-import Test from "../pages/Test/Testpage";
+import DashboardPage from "pages/Dashboard/Dashboard.js"
+import UserProfile from "pages/UserProfile/UserProfile.js"
+import TableList from "pages/TableList/TableList";
+import Test from "pages/Test/Testpage";
 // import Typography from "views/Typography/Typography.js";
 // import Icons from "views/Icons/Icons.js";
 // import Maps from "views/Maps/Maps.js";

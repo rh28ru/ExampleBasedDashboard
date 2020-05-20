@@ -11,7 +11,7 @@ function createArray() {
 export default function Dashboard() {
   return (
     <div>
-      <h1 >  Dashboard Page.....</h1>
+      <h1 >  Dashboard Page...path jsconfig.json</h1>
       { createArray().map(i=>( <div key={i}>{i}</div>)) }
         
       

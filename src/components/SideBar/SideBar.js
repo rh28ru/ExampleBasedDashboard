@@ -14,7 +14,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { makeStyles, usetheme } from '@material-ui/core/styles';
 
 // styles ...
-import styles from "../../assets/jss/components/sideBarStyle"
+import styles from "assets/jss/components/sideBarStyle"
 import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles(styles)

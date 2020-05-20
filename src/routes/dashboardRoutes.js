@@ -7,11 +7,11 @@ import LibraryBooks from "@material-ui/icons/LibraryBooks";
 // import Notifications from "@material-ui/icons/Notifications";
 // import Unarchive from "@material-ui/icons/Unarchive";
 // import Language from "@material-ui/icons/Language";
-
+  
 
 // core components/views for Admin layout
 
-import DashboardPage from "pages/Dashboard/Dashboard.js"
+import DashboardPage from "../pages/Dashboard/Dashboard.js"
 import UserProfile from "../pages/UserProfile/UserProfile.js"
 import TableList from "../pages/TableList/TableList";
 import Test from "../pages/Test/Testpage";

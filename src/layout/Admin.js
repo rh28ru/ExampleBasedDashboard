@@ -36,7 +36,7 @@ const switchRoutes = (
 );
 
 
-function ResponsiveDrawer(props) {
+function Admin(props) {
   const { window } = props;
   const classes = useStyles();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -57,6 +57,7 @@ function ResponsiveDrawer(props) {
     <div className={classes.root}>
       <CssBaseline /> { /* check this */}
       <NavBar
+        links = {links}
         handleDrawerToggle = {handleDrawerToggle}
       />
       <SideBar
@@ -77,7 +78,7 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+Admin.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -85,4 +86,4 @@ ResponsiveDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default Admin;

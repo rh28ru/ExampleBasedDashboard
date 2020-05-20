@@ -11,7 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
 // import MailIcon from '@material-ui/icons/Mail';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, usetheme } from '@material-ui/core/styles';
 
 // styles ...
 import styles from "../../assets/jss/components/sideBarStyle"
@@ -34,18 +34,20 @@ export default function SideBar(props) {
         target="_blank"
       > */}
         <div className={classes.logoImage}>
-          <img src={logo} alt="logo" className={classes.img} />
-					<div className={classes.logoText}>{logoText}</div>
-        	
+					{ logo !== undefined ? 
+						(<img src={logo} alt="logo" className={classes.img} />)
+						:(null)
+					}
         </div>
+				<div className={classes.logoText}>{logoText}</div> 
       {/* </a> */}
     </div>
 	);
 		
 	const drawer = (
     <div>
-      <div className={classes.toolbar} />
-      <Divider />
+      {/* <div className={classes.toolbar} /> */}
+      <Divider light = {true}/>
       <List className={classes.list}>
 				{links.map((link, key)=> (
 					<NavLink
@@ -82,9 +84,11 @@ export default function SideBar(props) {
     </div>
   );	
 	return (
-		<nav className={classes.drawer} aria-label="mailbox folders">
+		<nav className={classes.drawer} aria-label="navigation bar">
 		{/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-		<Hidden smUp implementation="css">
+		<Hidden mdUp implementation="css"> 
+		{/* <Hidden smup implementation="css">  */}
+
 			<Drawer
 				container={container}
 				variant="temporary"
@@ -112,7 +116,7 @@ export default function SideBar(props) {
 				) : null}
 			</Drawer>
 		</Hidden>
-		<Hidden xsDown implementation="css">
+		<Hidden smDown implementation="css">
 			<Drawer
 				classes={{
 					paper: classes.drawerPaper,

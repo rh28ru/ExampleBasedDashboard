@@ -13,18 +13,12 @@ import {
 
 const sideBarStyle = ((theme) => ({
   drawer: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       flexShrink: 0,
     },
   },
-  appBar: {
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
-    },
-  },
-
+ 
   sidebarWrapper: {
     position: "relative",
     height: "calc(100vh - 75px)",
@@ -45,12 +39,12 @@ const sideBarStyle = ((theme) => ({
     zIndex: "1",
     ...boxShadow,
     width: drawerWidth,
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up("sm")]: {
       width: drawerWidth,
       position: "fixed",
       height: "100%"
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down("sm")]: {
       width: drawerWidth,
       ...boxShadow,
       position: "fixed",
@@ -151,44 +145,48 @@ const sideBarStyle = ((theme) => ({
   },
   logo: {
     position: "relative",
-    padding: "15px 15px",
-    zIndex: "4",
+    padding: "10px 10px",
+    zIndex: "1",
+    display: 'flex', // insert by RH.
     "&:after": {
       content: '""',
       position: "absolute",
       bottom: "0",
-      height: "1px",
-      right: "15px",
-      width: "calc(100% - 30px)",
+      // height: "1px",
+      // right: "15px",
+      // width: "calc(100% - 30px)",
       backgroundColor: "rgba(" + hexToRgb(grayColor[6]) + ", 0.3)"
     }
   },
+  logoImage: {
+    width: "40px",
+    // display: "inline-block",
+    maxHeight: "40px",
+    marginLeft: "0",
+    marginRight: "0",
+    display: 'flex' // insert by RH.
+  },    
+
+  img: {
+    width: "40px",
+    height: "40px",
+    top: "0px",
+    // position: "absolute",
+    // verticalAlign: "middle",
+    border: "0",
+    flex: 1,
+  }, 
+
   logoText: {
     ...defaultFont,
     fontSize: "25px",
     textAlign: "left",
     fontWeight: "400",
-    lineHeight: "56px",
+    lineHeight: "40px",
+    paddingLeft: "5px",
     color: whiteColor,
-    flexGrow: 1,
-    display: "flex",
-    position: "absolute",
-    left: "70px",
-    // top: "22px",
-    color: successColor[3],
-    verticalAlign: "middle",
-
+    flex: 1,  // insert by RH
   },
-
-  img: {
-    width: "40px",
-    top: "22px",
-    position: "absolute",
-    verticalAlign: "middle",
-    border: "0",
-    flexGrow: 1,
-    display: "block"
-  },  
 
   logoLink: {
     ...defaultFont,
@@ -205,15 +203,10 @@ const sideBarStyle = ((theme) => ({
       color: whiteColor
     }
   },
+
   logoLinkRTL: {
     textAlign: "right"
   },
-  logoImage: {
-    width: "200px",
-    display: "flex",
-    maxHeight: "50px",
-    marginLeft: "10px",
-    marginRight: "15px",
-  },  
+  
 }));
 export default sideBarStyle

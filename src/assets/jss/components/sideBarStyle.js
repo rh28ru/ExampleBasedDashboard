@@ -115,10 +115,10 @@ const sideBarStyle = ((theme) => ({
     ...defaultFont
   },
   itemIcon: {
-    width: "24px",
-    height: "30px",
-    fontSize: "20px",
-    lineHeight: "30px",
+    width: "10px",
+    height: "10px",
+    fontSize: "10px",
+    lineHeight: "20px",
     float: "left",
     marginRight: "15px",
     textAlign: "center",
@@ -134,7 +134,7 @@ const sideBarStyle = ((theme) => ({
     ...defaultFont,
     margin: "0",
     lineHeight: "30px",
-    fontSize: "20px",
+    fontSize: "14px",
     color: whiteColor
   },
   itemTextRTL: {

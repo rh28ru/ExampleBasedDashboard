@@ -1,11 +1,12 @@
 import React from "react"
 
+import { NavLink } from "react-router-dom";
 import Drawer from '@material-ui/core/Drawer';
 import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import Icon from "@material-ui/core/Icon"
 import ListItemText from '@material-ui/core/ListItemText';
 // import InboxIcon from '@material-ui/icons/MoveToInbox';
@@ -15,7 +16,6 @@ import { makeStyles, usetheme } from '@material-ui/core/styles';
 
 // styles ...
 import styles from "assets/jss/components/sideBarStyle"
-import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles(styles)
 
@@ -56,12 +56,14 @@ export default function SideBar(props) {
 						key={key}
 						>
 						<ListItem button className={classes.itemLink}>
-							{typeof link.icon	=== "string" ? (
+							{/* {typeof link.icon	=== "string" ? (
 								<Icon className={classes.itemIcon}> {link.icon}</Icon> ):(
 								<link.icon className={classes.itemIcon}></link.icon>		
 								)
-							}
-							{/* <ListItemIcon>{link.icon}</ListItemIcon> */}
+							} */}
+							<ListItemIcon className={classes.itemIcon} fontSize="small">
+								<link.icon fontSize = "small"></link.icon>	
+							</ListItemIcon>
 							<ListItemText 
 								primary={link.name}
 								className={classes.itemText}

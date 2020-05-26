@@ -60,6 +60,7 @@ export default function AdminNavbarLinks() {
               "aria-label": "Search"
             }
           }}
+          labelText = 'RHRHRH'
         />
         <Button color="white" aria-label="edit" justIcon round>
           <Search />
